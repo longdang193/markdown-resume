@@ -43,6 +43,7 @@
 import * as fileUpload from "@zag-js/file-upload";
 import { normalizeProps, useMachine } from "@zag-js/vue";
 import { fetchFile } from "@renovamen/utils";
+import { importFileFromUrl } from "~/utils/urlImport";
 
 // File component component
 const localFile = ref<string | null>(null);
@@ -69,12 +70,19 @@ const api = computed(() => fileUpload.connect(state.value, send, normalizeProps)
 
 // Fetched file from pasted URL
 const pastedURL = ref("");
+const toast = useToast();
 
-const uploadFileFromURL = () => {
+const uploadFileFromURL = async () => {
   if (pastedURL.value.trim() === "") return;
-  fetchFile(pastedURL.value).then((content: string) => {
-    setResumeMd(content);
-    localFile.value = null;
-  });
+
+  const result = await importFileFromUrl(pastedURL.value, fetchFile);
+  if (!result.ok) {
+    console.error("Failed to import Markdown from URL:", result.error);
+    toast.import(false);
+    return;
+  }
+
+  setResumeMd(result.content);
+  localFile.value = null;
 };
 </script>
