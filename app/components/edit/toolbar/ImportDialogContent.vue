@@ -103,6 +103,7 @@
 
 <script lang="ts" setup>
 import { fetchFile } from '~/libs/utils'
+import { importFileFromUrl } from '~/utils/urlImport'
 
 const props = defineProps<{
   close?: () => void
@@ -238,7 +239,10 @@ const uploadFileFromURL = async () => {
   if (url === '') return
 
   try {
-    const content = await fetchFile(url)
+    const result = await importFileFromUrl(url, fetchFile)
+    if (!result.ok) throw result.error
+
+    const content = result.content
     setResumeMd(content)
     localFile.value = null
     finishImport(filenameFromURL(url))

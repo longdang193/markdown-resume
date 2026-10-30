@@ -7,13 +7,32 @@ import {
 } from './defaultSettings'
 import { isValidResume } from '~/utils/resumeValidation'
 import type { ResumeStorage, ResumeStorageItem, ResumeStyles, PaperType } from '~/types'
+import { CURRENT_STORAGE_KEY, LEGACY_STORAGE_KEYS, getMergedStorage } from './storageMigration'
 
-const MARKDOWN_RESUME_KEY = 'MARKDOWN_RESUME_data'
+const MARKDOWN_RESUME_KEY = CURRENT_STORAGE_KEY
 
-export const clearResumeStorage = () => localForage.removeItem(MARKDOWN_RESUME_KEY)
+export const clearResumeStorage = () =>
+  Promise.all([
+    localForage.removeItem(MARKDOWN_RESUME_KEY),
+    ...LEGACY_STORAGE_KEYS.map(key => localForage.removeItem(key)),
+  ])
 
-export const getStorage = async () =>
-  isClient ? localForage.getItem<ResumeStorage>(MARKDOWN_RESUME_KEY) : null
+export const getStorage = async () => {
+  if (!isClient) return null
+
+  const keys = [...LEGACY_STORAGE_KEYS, CURRENT_STORAGE_KEY] as const
+  const entries = await Promise.all(
+    keys.map(async key => [key, await localForage.getItem(key)] as const),
+  )
+  const { storage, migrated } = getMergedStorage(Object.fromEntries(entries))
+
+  if (migrated) {
+    await localForage.setItem(CURRENT_STORAGE_KEY, storage)
+    await Promise.all(LEGACY_STORAGE_KEYS.map(key => localForage.removeItem(key)))
+  }
+
+  return storage as ResumeStorage
+}
 
 export const getResumeList = async () => {
   const storage = (await getStorage()) || {}

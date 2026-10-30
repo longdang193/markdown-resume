@@ -14,6 +14,10 @@ export const THEME_COLORS = [
 
 export const EN_FONTS: Font[] = [
   {
+    name: 'Inter',
+    fontFamily: 'Inter, "Segoe UI", "Helvetica Neue", Arial, sans-serif',
+  },
+  {
     name: 'Arial',
   },
   {
