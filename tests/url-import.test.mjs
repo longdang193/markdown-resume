@@ -19,7 +19,7 @@ const importTsModule = async (path) => {
 
 test("handles a reset URL import without rejecting to the caller", async () => {
   const { importFileFromUrl } = await importTsModule(
-    new URL("../site/src/utils/urlImport.ts", import.meta.url)
+    new URL("../app/utils/urlImport.ts", import.meta.url)
   );
   const error = Object.assign(new Error("read ECONNRESET"), { code: "ECONNRESET" });
 
@@ -32,7 +32,7 @@ test("handles a reset URL import without rejecting to the caller", async () => {
 
 test("returns imported URL content on success", async () => {
   const { importFileFromUrl } = await importTsModule(
-    new URL("../site/src/utils/urlImport.ts", import.meta.url)
+    new URL("../app/utils/urlImport.ts", import.meta.url)
   );
 
   const result = await importFileFromUrl(

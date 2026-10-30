@@ -1,0 +1,172 @@
+lang: Idioma
+toggle_dark: Cambiar tema claro/oscuro
+
+nav:
+  home: Inicio
+  about: Acerca de
+  settings: Configuración
+  privacy: Política de Privacidad
+  information: Información
+  links: Enlaces
+  coffee: Invítame un café
+  see_more: Ver más
+
+settings:
+  title: Configuración
+  description: Administra el idioma, la apariencia y el almacenamiento local.
+  language: Idioma
+  language_label: Idioma de visualización
+  filter_language: Filtrar idiomas...
+  appearance: Apariencia
+  theme: Tema de color
+  light: Claro
+  dark: Oscuro
+  auto: Automático
+  editor: Editor
+  minimap: Minimapa
+  minimap_description: Muestra el minimapa de código en los editores Markdown y CSS.
+  line_numbers: Números de línea
+  line_numbers_description: Muestra los números de línea en los editores Markdown y CSS.
+  storage: Almacenamiento
+  refresh_storage: Actualizar estimación de almacenamiento
+  storage_used: Almacenamiento del navegador utilizado
+  used: usado
+  usage: Uso
+  quota: Cuota
+  resumes: Currículums
+  images: Imágenes
+  storage_estimate_note: La cuota de almacenamiento es una estimación y puede variar según el dispositivo y el navegador.
+  storage_unavailable: Las estimaciones de almacenamiento no están disponibles en este navegador.
+  svg_icons: Iconos SVG
+  svg_icons_description: Los SVG en línea se guardan en caché localmente para que las exportaciones funcionen sin conexión.
+  cached_icons: Iconos en caché
+  clear_svg_cache: Vaciar caché de SVG
+  danger_zone: Zona de riesgo
+  danger_description: Borra permanentemente todas las currículums, imágenes y ajustes de la app guardados en este dispositivo.
+  erase_all_data: Borrar Todo el Contenido y los Ajustes
+  erase_warning: Esta acción eliminará todos los datos y restaurará la app a su estado de fábrica. Esta acción no se puede deshacer.
+  type_delete: Escribe DELETE para confirmar.
+  confirm: Confirmar
+  defaults:
+    title: Predeterminados
+    name: Nombre Completo
+    name_placeholder: p. ej., Bruce Wayne
+    paper_size: Tamaño de hoja
+
+disqus:
+  leave_a_comment: Deja un Comentario
+
+dialog:
+  close: Cerrar diálogo
+
+head:
+  title: Markdown Resume - Creador de Currículums Online Gratuito
+  desc: Creador de currículums vitae en línea gratuito, te permite crear tu currículum en minutos con Markdown!
+  keywords: creador de currículum, creador de cv, creador de curriculum vitae, currículum markdown, resume.md
+
+landing:
+  hero: Escribe tu <span text-brand>currículum</span> en Markdown!
+  desc: es una herramienta gratuita y de código abierto creada para construir y gestionar tus currículums lo más fácilmente posible, sin perder la privacidad de tus datos.
+  start: Crear Mi Currículum
+  feats:
+    - title: Simple y poderoso
+      items: Gestiona múltiples currículums<br>Vista previa en tiempo real<br>Exportar a PDF<br>Exportar a HTML<br>Exportar a MS Word (beta)<br>Galería de imágenes<br>Totalmente personalizable<br>Elige fuentes y agrega íconos<br>Y <a href="https://github.com/junian/markdown-resume#features" target="_blank">más funciones</a>
+    - title: Seguridad Primero
+      items: Open source y gratuito<br>Los datos se guardan en local<br>No se requiere inicio de sesión ni registro<br>Tus datos nunca salen de tu dispositivo<br>Sin almacenamiento ni procesamiento en el servidor<br>Tus datos son siempre tuyos
+  analytics_disclaimer: >
+    Cuando se accede desde <a href="https://junian.dev/markdown-resume/" target="_blank" class="underline">junian.dev/markdown-resume/</a>,
+    esta aplicación utiliza <strong>Google Analytics</strong> y <strong>Cloudflare Web Analytics</strong> para medir
+    métricas de uso agregadas como visitas a páginas y usuarios activos. Tu currículum y tus imágenes nunca se recopilan ni se transmiten.
+    Al usar esta aplicación, aceptas la <a href="https://junian.dev/privacy-policy/" target="_blank" class="underline">Política de Privacidad</a>.
+
+resumes:
+  my_resumes: Mis Currículums
+  description: Crea, organiza, importa y respalda tus currículums.
+  created: "Creado: "
+  updated: "Actualizado: "
+  new: Nuevo
+  save: Guardar
+  saveas: Respaldar BD ...
+  import: Restaurar BD ...
+  rename: Renombrar
+  duplicate: Duplicar
+  delete: Eliminar
+
+import:
+  title: Importar un archivo
+  from_local: Arrastra tu archivo aquí, o haz clic aquí para elegir un archivo
+  converting: Convirtiendo archivo a Markdown...
+  from_url: Pegar la URL del archivo
+  from_url_confirm: Cargar archivo desde URL
+  error_title: Error al importar
+  error_close: Cerrar
+
+toolbar:
+  open: Abrir barra lateral de formato
+  close: Cerrar barra lateral de formato
+  file:
+    text: Importar / Exportar
+    import: Importar Currículum
+    export_pdf: Exportar PDF
+    export_md: Exportar Markdown
+    export_html: Exportar HTML
+    export_docx: Exportar DOCX
+  correct_case:
+    text: Corregir Mayúsculas
+    desc: "Ejemplo: \"Github\" → \"GitHub\""
+    note: "Nota: las palabras que solo contengan mayúsculas o minúsculas (\"GITHUB\" o \"github\") no se modificarán"
+    btn: Corrígelo!
+  migrate_iconify:
+    text: Corregir Iconos
+    desc: Convierte el marcado de span de Iconify heredado y las etiquetas iconify-icon de este currículum a la sintaxis de iconos de Markdown, p. ej. ::icon::.
+    btn: Migrar y guardar
+  paper: Tamaño de hoja
+  font_family: Fuente
+  font_size: Tamaño de Fuente
+  cjk: CJK
+  en: Inglés
+  theme_color: Color de tema
+  select_color: Establecer el color del tema a {color}
+  paragraph: Espaciado de párrafo
+  line: Espaciado de línea
+  margin: Márgenes
+  vertical: Arriba y abajo
+  horizontal: Izquierda y derecha
+
+zoom:
+  in: Acercar
+  out: Alejar
+  fit_width: Ajustar al ancho
+  fit_height: Ajustar a la altura
+
+images:
+  my_images: Mis Imágenes
+  description: Administra imágenes locales para usarlas en tus currículums.
+  upload: Subir Imagen
+  sort_asc: Más Antiguo Primero
+  sort_desc: Más Reciente Primero
+  copy_url: Copiar URL
+  delete: Eliminar
+  empty: Aún no hay imágenes. Sube una para empezar.
+  upload_title: Subir una Imagen
+  from_local: Suelta tu imagen aquí
+  copied: URL copiada al portapapeles
+  deleted: La imagen "{msg}" ha sido eliminada
+  uploaded: La imagen "{msg}" se ha subido correctamente
+
+notification:
+  save: Tus cambios han sido guardados
+  switch: Cambiado al currículum "{msg}"
+  delete: El currículum "{msg}" ha sido eliminado
+  new: Nuevo currículum creado
+  duplicate: Se ha creado la copia "{new}" del currículum "{old}"
+  correct:
+    yes: Se han corregido {num} palabras
+    no: ¡Todo el texto ya estaba correcto!
+  iconify_migration:
+    yes: Se han migrado y guardado {count} ícono(s) de Iconify
+    no: No se encontraron íconos heredados de Iconify
+  import:
+    yes: ¡Los datos se han importado correctamente!
+    no: El formato de datos no es válido.
+    loaded: '{filename} se cargó correctamente'

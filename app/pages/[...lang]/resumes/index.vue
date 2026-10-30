@@ -1,0 +1,53 @@
+<template>
+  <div class="resumes-page sidebar-layout">
+    <MainSidebar />
+
+    <main class="max-w-306 mx-auto px-5 py-12 md:px-10 md:py-16 text-dark-c">
+      <div
+        class="flex flex-col gap-4 mb-10 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div class="hstack gap-3">
+          <span class="circle size-10 shrink-0 bg-brand text-white">
+            <UIcon
+              name="i-ep:document"
+              class="text-xl"
+            />
+          </span>
+          <div>
+            <h1 class="text-3xl font-bold">
+              {{ $t("resumes.my_resumes") }}
+            </h1>
+            <p class="mt-1 text-sm text-light-c">
+              {{ $t("resumes.description") }}
+            </p>
+          </div>
+        </div>
+        <FileOptions @update="loadResumes" />
+      </div>
+
+      <div class="grid justify-between gap-x-1 gap-y-8 grid-cols-[repeat(auto-fill,14rem)]">
+        <NewResume />
+        <ResumeItem
+          v-for="resume in list"
+          :key="resume.id"
+          class="resume-item"
+          :resume="resume"
+          @update="loadResumes"
+        />
+      </div>
+    </main>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import type { ResumeListItem } from '~/types'
+
+// Load resumes from storage
+const list = ref<ResumeListItem[]>()
+
+const loadResumes = async () => {
+  list.value = await getResumeList()
+}
+
+onMounted(loadResumes)
+</script>

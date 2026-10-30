@@ -17,7 +17,7 @@ const importTsModule = async (path) => {
 
 test("migrates resumes from legacy storage keys into current key", async () => {
   const { getMergedStorage } = await importTsModule(
-    new URL("../site/src/utils/storageMigration.ts", import.meta.url)
+    new URL("../app/utils/storageMigration.ts", import.meta.url)
   );
 
   const legacyResume = {
@@ -53,7 +53,7 @@ test("migrates resumes from legacy storage keys into current key", async () => {
 
 test("keeps current storage authoritative while still merging unique legacy resumes", async () => {
   const { getMergedStorage } = await importTsModule(
-    new URL("../site/src/utils/storageMigration.ts", import.meta.url)
+    new URL("../app/utils/storageMigration.ts", import.meta.url)
   );
 
   const currentResume = {
