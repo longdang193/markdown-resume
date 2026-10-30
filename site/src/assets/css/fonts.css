@@ -1,6 +1,34 @@
 /* English */
 
 @font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Inter Regular"), local("Inter");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Inter Bold"), local("Inter");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Inter Italic"), local("Inter");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 700;
+  src: local("Inter Bold Italic"), local("Inter Bold"), local("Inter");
+}
+
+@font-face {
   font-family: "CMU Sans Serif";
   font-style: normal;
   font-weight: normal;

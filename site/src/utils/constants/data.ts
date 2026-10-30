@@ -14,6 +14,10 @@ export const THEME_COLORS = [
 
 export const EN_FONTS: Font[] = [
   {
+    name: "Inter",
+    fontFamily: 'Inter, "Segoe UI", "Helvetica Neue", Arial, sans-serif'
+  },
+  {
     name: "Arial"
   },
   {
@@ -135,3 +139,6 @@ export const MM_TO_PX = 3.78;
 
 export const getPaperPx = (paper: keyof typeof PAPER, v: "h" | "w") =>
   ~~(PAPER[paper][v] * MM_TO_PX);
+
+
+
